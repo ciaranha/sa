@@ -1,9 +1,25 @@
+@font-face {
+  font-family: 'GTAmerica-Bold';
+  src: url('/assets/GTAmerica-Bold.eot?#iefix') format('embedded-opentype'),  url('/assets/GTAmerica-Bold.otf')  format('opentype'),
+	     url('/assets/GTAmerica-Bold.woff') format('woff'), url('/assets/GTAmerica-Bold.ttf')  format('truetype'), url('/assets/GTAmerica-Bold.svg#GTAmerica-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ApercuPro';
+  src: url('/assets/ApercuPro.eot?#iefix') format('embedded-opentype'),  url('/assets/ApercuPro.otf')  format('opentype'),
+	     url('/assets/ApercuPro.woff') format('woff'), url('/assets/ApercuPro.ttf')  format('truetype'), url('/assets/ApercuPro.svg#ApercuPro') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: 'ApercuPro', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,4 +27,66 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas,
     monospace;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'GTAmerica-Bold';
+}
+
+.card-deck .card {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.card {
+  border: 1px solid #EEF2F5 !important;
+}
+.card-location {
+  margin-bottom: 24px !important;
+}
+.card-location-title {
+  margin: 16px 0 20px !important;
+  font-size: 28px;
+  display: block;
+  line-height: 1;
+}
+
+.image-cover {
+  overflow: hidden;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  border-radius: 3px;
+}
+
+.card-location-days {
+  font-family: 'ApercuPro';
+  font-size: 13px;
+  margin-left: 8px;
+}
+.card-location p {
+    margin-bottom: .5rem;
+}
+.card-location .card-text p {
+
+}
+
+.card-footer {
+  background: none !important;
+  border-top: none !important;
+}
+
+.card-location-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-location-place-type {
+}
+
+.loading {
+  width: 100%;
+  height: 100vh;
 }

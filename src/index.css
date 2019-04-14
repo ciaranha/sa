@@ -1,15 +1,23 @@
 @font-face {
   font-family: 'GTAmerica-Bold';
-  src: url('/assets/GTAmerica-Bold.eot?#iefix') format('embedded-opentype'),  url('/assets/GTAmerica-Bold.otf')  format('opentype'),
-	     url('/assets/GTAmerica-Bold.woff') format('woff'), url('/assets/GTAmerica-Bold.ttf')  format('truetype'), url('/assets/GTAmerica-Bold.svg#GTAmerica-Bold') format('svg');
+  src:
+    url('./assets/GTAmerica-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./assets/GTAmerica-Bold.otf')  format('opentype'),
+    url('./assets/GTAmerica-Bold.woff') format('woff'),
+    url('./assets/GTAmerica-Bold.ttf')  format('truetype'),
+    url('./assets/GTAmerica-Bold.svg#GTAmerica-Bold') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'ApercuPro';
-  src: url('/assets/ApercuPro.eot?#iefix') format('embedded-opentype'),  url('/assets/ApercuPro.otf')  format('opentype'),
-	     url('/assets/ApercuPro.woff') format('woff'), url('/assets/ApercuPro.ttf')  format('truetype'), url('/assets/ApercuPro.svg#ApercuPro') format('svg');
+  src:
+    url('./assets/ApercuPro.eot?#iefix') format('embedded-opentype'),
+    url('./assets/ApercuPro.otf')  format('opentype'),
+    url('./assets/ApercuPro.woff') format('woff'),
+    url('./assets/ApercuPro.ttf')  format('truetype'),
+    url('./assets/ApercuPro.svg#ApercuPro') format('svg');
   font-weight: normal;
   font-style: normal;
 }

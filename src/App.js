@@ -3,6 +3,7 @@ import Airtable from 'airtable';
 import showdown from 'showdown';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
+import './index.css';
 import logo from './assets/logo.svg'; // Tell Webpack this JS file uses this image
 const markdownConverter = new showdown.Converter();
 const base = new Airtable({ apiKey: 'keyNxi8D57wMKr4Ge' }).base('appKL8Umn96W3lcVd');
@@ -78,12 +79,11 @@ class App extends Component {
           )
           ) : (
             <div className="d-flex justify-content-center loading">
-            <div class="text-center">
-
-              <div className="spinner-border text-warning" role="status">
-                <span className="sr-only">Loading...</span>
+              <div class="text-center">
+                <div className="spinner-border text-warning" role="status">
+                  <span className="sr-only">Loading...</span>
+                </div>
               </div>
-                            </div>
             </div>
           )}
                 </div>

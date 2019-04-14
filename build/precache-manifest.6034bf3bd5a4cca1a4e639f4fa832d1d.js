@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "677edc2e5d4fc295973d200adcfe0fd3",
-    "url": "/static/media/GTAmerica-Bold.677edc2e.ttf"
+    "revision": "bdefcf010d3ebdbf039e0333fc693cbb",
+    "url": "/static/media/GTAmerica-Bold.bdefcf01.otf"
   },
   {
     "revision": "bb4dde4f7c20ed138ed5",
@@ -28,20 +28,12 @@ self.__precacheManifest = [
     "url": "/static/media/GTAmerica-Bold.c76f6dd3.eot"
   },
   {
-    "revision": "bdefcf010d3ebdbf039e0333fc693cbb",
-    "url": "/static/media/GTAmerica-Bold.bdefcf01.otf"
+    "revision": "677edc2e5d4fc295973d200adcfe0fd3",
+    "url": "/static/media/GTAmerica-Bold.677edc2e.ttf"
   },
   {
     "revision": "bb4dde4f7c20ed138ed5",
     "url": "/static/js/main.6227535a.chunk.js"
-  },
-  {
-    "revision": "953ba30cdcf6774df77ef147ef577705",
-    "url": "/static/media/ApercuPro.953ba30c.woff"
-  },
-  {
-    "revision": "b9fe597bbf4650832f53416848e762dc",
-    "url": "/static/media/GTAmerica-Bold.b9fe597b.svg"
   },
   {
     "revision": "1b765c712fe52385c7b187ef8a301b8f",
@@ -50,6 +42,14 @@ self.__precacheManifest = [
   {
     "revision": "a31afc54bd2b2f38e1a5b0cf95f44de5",
     "url": "/static/media/ApercuPro.a31afc54.otf"
+  },
+  {
+    "revision": "b9fe597bbf4650832f53416848e762dc",
+    "url": "/static/media/GTAmerica-Bold.b9fe597b.svg"
+  },
+  {
+    "revision": "953ba30cdcf6774df77ef147ef577705",
+    "url": "/static/media/ApercuPro.953ba30c.woff"
   },
   {
     "revision": "ff2cd0fe4fd33679e277b77d8a6e1991",

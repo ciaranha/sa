@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Airtable from 'airtable';
+import { LazyImage } from "react-lazy-images";
+import placeholder from '../assets/placeholder@2x.png';
 const base = new Airtable({ apiKey: 'keyNxi8D57wMKr4Ge' }).base('appKL8Umn96W3lcVd');
 
 export default class Theroute extends Component {
@@ -45,7 +47,14 @@ export default class Theroute extends Component {
                 <div className="card card-location">
                   <div className="card-body">
                     <div className="image-cover">
-                      <img className="card-img" src={this.parseImg(record.fields)}></img>
+                      <LazyImage
+                        src={this.parseImg(record.fields)}
+                        class="card-img"
+                        placeholder={({ imageProps, ref }) => (
+                          <img ref={ref} src={placeholder} alt={imageProps.alt} width="100%"/>
+                        )}
+                        actual={({ imageProps }) => <img {...imageProps} />}
+                      />
                     </div>
 
                     <div class="card-location-header">

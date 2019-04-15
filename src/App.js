@@ -6,6 +6,7 @@ import './index.css';
 import logo from './assets/logo.svg';
 import Theroute from './views/theroute';
 import Packinglist from './views/packinglist';
+import Calendar from './views/calendar';
 import {BrowserRouter, Route} from 'react-router-dom';
 
 
@@ -27,6 +28,9 @@ class App extends Component {
                     <a className="nav-link" href="/">The Route</a>
                   </li>
                   <li className="nav-item">
+                    <a className="nav-link" href="/calendar">Calendar</a>
+                  </li>
+                  <li className="nav-item">
                     <a className="nav-link" href="/packinglist">Packing List</a>
                   </li>
                 </ul>
@@ -45,6 +49,11 @@ class App extends Component {
                <Route exact={true} path='/packinglist' render={() => (
                  <div className="App">
                    <Packinglist />
+                 </div>
+               )}/>
+               <Route exact={true} path='/calendar' render={() => (
+                 <div className="App">
+                   <Calendar />
                  </div>
                )}/>
              </div>

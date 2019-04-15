@@ -13,7 +13,10 @@ export default class Theroute extends Component {
     };
   }
   componentDidMount() {
-    base('Stops').select({view: 'Grid view'})
+    base('Stops').select({
+      view: 'Grid view',
+      filterByFormula: '{Planned Stop}!="No"',
+    })
     .eachPage(
       (records, fetchNextPage) => {
         this.setState({
@@ -24,6 +27,7 @@ export default class Theroute extends Component {
       }
     );
   }
+
   parseImg(element) {
     if (element.imageURL instanceof Array) {
       return element.imageURL[0].thumbnails.large.url;
@@ -44,11 +48,11 @@ export default class Theroute extends Component {
                       <img className="card-img" src={this.parseImg(record.fields)}></img>
                     </div>
 
-                    <div className="card-location-header">
+                    <div class="card-location-header">
                       <h3 className="card-title card-location-title">
                         {record.fields['Stop']}
                         <small className="text-muted card-location-days">
-                          {record.fields['Days (planned)']} days
+                          {record.fields['Days planned']} days
                         </small>
                       </h3>
                       <span className="card-location-place-type badge badge-warning" content='{record.fields["Place Type"]}'>
@@ -60,15 +64,18 @@ export default class Theroute extends Component {
                   </div>
 
                   <div className="card-footer d-flex justify-content-between">
-                    <p><span className="text-muted">Planned Stop: </span>{record.fields['Planned Stop']}</p>
-                    <p><span className="text-muted">$</span>{record.fields['Daily Budget']} <span className="text-muted">p/day</span></p>
+                    <p><span className="text-muted">In Route: </span>{record.fields['Planned Stop']}</p>
+                    <div class="d-flex">
+                      <p><span className="text-muted">$</span>{record.fields['Daily Budget']} <span className="text-muted">p/day </span></p>
+                      <p><span className="text-muted">, Total $</span>{record.fields['Total Cost']}</p>
+                    </div>
                   </div>
                 </div>
               </div>
       )
       ) : (
         <div className="d-flex justify-content-center loading">
-          <div className="text-center">
+          <div class="text-center">
             <div className="spinner-border text-warning" role="status">
               <span className="sr-only">Loading...</span>
             </div>

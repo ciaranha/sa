@@ -40,6 +40,7 @@ code {
 h1, h2, h3, h4, h5 {
   font-family: 'GTAmerica-Bold';
 }
+
 .masthead {
   margin: 100px 0;
 }
@@ -47,13 +48,17 @@ h1, h2, h3, h4, h5 {
 .card-deck .card {
   margin-left: 0 !important;
   margin-right: 0 !important;
+  margin-bottom: 32px !important;
 }
+
 .card {
   border: 1px solid #EEF2F5 !important;
 }
+
 .card-location {
   margin-bottom: 24px !important;
 }
+
 .card-location-title {
   margin: 16px 0 20px !important;
   font-size: 28px;
@@ -63,7 +68,7 @@ h1, h2, h3, h4, h5 {
 
 .image-cover {
   overflow: hidden;
-  height: 250px;
+  height: 230px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,11 +85,13 @@ h1, h2, h3, h4, h5 {
   font-size: 13px;
   margin-left: 8px;
 }
+
 .card-location p {
-    margin-bottom: .5rem;
+  margin-bottom: .5rem;
 }
+
 .card-location .card-text p {
-margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .card-footer {
@@ -98,7 +105,14 @@ margin-bottom: 0;
   align-items: center;
 }
 
-.card-location-place-type {
+.card-location-country {
+  font-family: 'GTAmerica-Bold';
+  font-size: 18px;
+  color: #D8E0E6;
+  position: absolute;
+  top: -18px;
+  left: 36px;
+  text-transform: uppercase;
 }
 
 .loading {
@@ -111,10 +125,33 @@ margin-bottom: 0;
   display: block;
 }
 
-
 iframe {
   width: 100%;
   height: 90vh;
   border: none;
   margin-top: -10vh;
+}
+
+.footer-img-container {
+  background: url('./assets/map.svg');
+  height: 30vh;
+  background-repeat: repeat-x;
+  width: 100%;
+  margin-top: 60px;
+  background-size: 300px;
+  position: relative;
+}
+.footer-img-container:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, .7) 20%,
+    rgba(255, 255, 255, .5) 30%,
+    rgba(255, 255, 255, .3) 40%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0) 100%);
 }

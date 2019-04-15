@@ -4,7 +4,7 @@ import { LazyImage } from "react-lazy-images";
 import placeholder from '../assets/placeholder@2x.png';
 const base = new Airtable({ apiKey: 'keyNxi8D57wMKr4Ge' }).base('appKL8Umn96W3lcVd');
 
-export default class Theroute extends Component {
+export default class Allstops extends Component {
   state = {
   }
 
@@ -17,7 +17,7 @@ export default class Theroute extends Component {
   componentDidMount() {
     base('Stops').select({
       view: 'Grid view',
-      filterByFormula: '{Planned Stop}="Yes"'
+      // filterByFormula: '{Planned Stop}="Yes"'
      //  sort: [
      //     {field: 'Country', direction: 'asc'}
      // ],

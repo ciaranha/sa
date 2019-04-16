@@ -4,21 +4,25 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import './index.css';
 import logo from './assets/logo.svg';
-import map from './assets/map.svg';
 import Theroute from './views/theroute';
 import Packinglist from './views/packinglist';
 import Calendar from './views/calendar';
 import Allstops from './views/allstops';
+import Currentlocation from './views/currentlocation';
+import Nextlocation from './views/nextlocation';
 import {BrowserRouter, Route} from 'react-router-dom';
-
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <div class="app-header">
+          <Currentlocation />
+          <Nextlocation />
+        </div>
         <div className="container-fluid mt-5">
           <div className="masthead d-flex justify-content-between">
-            <a className="nav-link" href="/">
+            <a href="/">
               <img src={logo} alt="Logo" />
             </a>
 
@@ -45,6 +49,7 @@ class App extends Component {
             </nav>
           </div>
         </div>
+
         <div className="container-fluid mt-5">
           <BrowserRouter>
              <div>

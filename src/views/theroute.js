@@ -79,11 +79,8 @@ export default class Theroute extends Component {
                   </div>
 
                   <div className="card-footer d-flex justify-content-between">
-                    <p><span className="text-muted">In Route: </span>{record.fields['Planned Stop']}</p>
-                    <div class="d-flex">
                       <p><span className="text-muted">$</span>{record.fields['Daily Budget']} <span className="text-muted">p/day </span></p>
-                      <p><span className="text-muted">, Total $</span>{record.fields['Total Cost']}</p>
-                    </div>
+                      <p><span className="text-muted">Total $</span>{record.fields['Total Cost']}</p>
                   </div>
                 </div>
               </div>

@@ -16,11 +16,7 @@ export default class Allstops extends Component {
   }
   componentDidMount() {
     base('Stops').select({
-      view: 'Grid view',
-      // filterByFormula: '{Planned Stop}="Yes"'
-     //  sort: [
-     //     {field: 'Country', direction: 'asc'}
-     // ],
+      view: 'Grid view'
     })
     .eachPage(
       (records, fetchNextPage) => {

@@ -43,26 +43,27 @@ export default class Packinglist extends Component {
                   <div className="card-body">
                     <div className="image-cover image-cover-packing-list">
                       <img className="card-img" src={this.parseImg(record.fields)}></img>
+                      <span className="card-location-place-type badge badge-warning" content='{record.fields["Place Type"]}'>
+                        {record.fields['Type']}
+                      </span>
                     </div>
 
                     <div className="card-location-header">
                       <h3 className="card-title card-location-title">
                         {record.fields['Item']}
                       </h3>
-                      <span className="card-location-place-type badge badge-warning" content='{record.fields["Place Type"]}'>
-                        {record.fields['Type']}
-                      </span>
+
                     </div>
                     <p><span className="card-brand text-muted">{record.fields['Brand']}</span></p>
                     <p>{record.fields['Description']}</p>
 
                   </div>
 
-                  <div className="card-footer d-flex justify-content-between">
+                  <div className="card-footer d-flex justify-content-between align-items-center">
                       <a className="btn btn-sm btn-light" href={record.fields['Link']}>
                         Buy it
                       </a>
-                    <span><span className="text-muted">$</span>{record.fields['Price']}</span>
+                    <div><span className="text-muted">$</span>{record.fields['Price']}</div>
                   </div>
                 </div>
               </div>

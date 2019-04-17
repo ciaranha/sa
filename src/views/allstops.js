@@ -57,6 +57,9 @@ export default class Allstops extends Component {
                         )}
                         actual={({ imageProps }) => <img {...imageProps} />}
                       />
+                      <span className="card-location-place-type badge badge-warning" content='{record.fields["Place Type"]}'>
+                        {record.fields['Place Type']}
+                      </span>
                     </div>
 
                     <div class="card-location-header">
@@ -66,19 +69,16 @@ export default class Allstops extends Component {
                           {record.fields['Days planned']} days
                         </small>
                       </h3>
-                      <span className="card-location-place-type badge badge-warning" content='{record.fields["Place Type"]}'>
-                        {record.fields['Place Type']}
-                      </span>
                     </div>
                     <p><span className="text-muted">{record.fields['Activities available']}</span></p>
                     <p>{record.fields['Description']}</p>
                   </div>
 
                   <div className="card-footer d-flex justify-content-between">
-                    <p><span className="text-muted">In Route: </span>{record.fields['Planned Stop']}</p>
+                    <div><span className="text-muted">In Route: </span>{record.fields['Planned Stop']}</div>
                     <div class="d-flex">
-                      <p><span className="text-muted">$</span>{record.fields['Daily Budget']} <span className="text-muted">p/day </span></p>
-                      <p><span className="text-muted">, Total $</span>{record.fields['Total Cost']}</p>
+                      <span className="text-muted">$</span>{record.fields['Daily Budget']} <span className="text-muted">p/day </span>
+                      <span className="text-muted">, Total $</span>{record.fields['Total Cost']}
                     </div>
                   </div>
                 </div>

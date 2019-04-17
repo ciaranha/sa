@@ -41,6 +41,10 @@ h1, h2, h3, h4, h5 {
   font-family: 'GTAmerica-Bold';
 }
 
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding: .8rem !important;
+}
+
 .app-sidebar {
   background: url('./assets/map.svg');
   width: 40px;
@@ -59,6 +63,11 @@ h1, h2, h3, h4, h5 {
   background: url('./assets/map.svg');
   background-repeat: repeat-x;
   background-size: 300px;
+  min-height: 30px;
+  justify-content: space-between;
+  padding: 8px 46px;
+  max-height: 48px;
+  align-items: center;
 }
 
 .app-header-half {
@@ -73,7 +82,7 @@ h1, h2, h3, h4, h5 {
   align-items: center;
   padding: 12px 42px;
   border-left: 2px solid #F7F9FA;
-  height: 60px;
+  height: 42px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -92,16 +101,15 @@ h1, h2, h3, h4, h5 {
 
 .app-header-half-pretitle {
   font-family: 'GTAmerica-Bold';
-  font-size: 12px;
+  font-size: 13px;
   color: #9AABB8;
-  margin: -2px 0 0 0;
+  margin: 0 2px 0 0;
   line-height: 1;
 }
 
 .app-header-half-title {
   font-family: 'GTAmerica-Bold';
-  font-size: 16px;
-  margin: 2px 0 0 0;
+  font-size: 14px;
   line-height: 1;
 }
 
@@ -112,13 +120,37 @@ h1, h2, h3, h4, h5 {
 }
 
 .app-header-half-image {
-  width: 54px;
-  margin-right: 8px;
-  background: #000;
-  height: 36px;
+  width: 34px;
+  margin-right: 6px;
+  height: 34px;
   display: flex;
   align-items: center;
-  border-radius: 2px;
+  border-radius: 32px;
+  overflow: hidden;
+  border: 2px solid #fff;
+}
+.app-header-half-image .card-img {
+  width: 150%;
+}
+
+/* PEOPLE */
+.peoples {
+  align-items: center;
+}
+
+.people-image {
+  margin-left: -8px;
+  width: 35px;
+  height: 34px;
+  border: 2px solid rgba(255,255,255,1);
+  border-radius: 32px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.people-image img {
+  width: 150%;
 }
 
 .card-location-sm .card-body {
@@ -127,6 +159,10 @@ h1, h2, h3, h4, h5 {
 
 .masthead {
   margin: 100px 0;
+}
+
+.masthead img {
+  max-width: 90%;
 }
 
 .navbar {
@@ -163,7 +199,7 @@ h1, h2, h3, h4, h5 {
 .card-deck .card {
   margin-left: 0 !important;
   margin-right: 0 !important;
-  margin-bottom: 32px !important;
+  margin-bottom: 40px !important;
 }
 
 .card {
@@ -176,19 +212,55 @@ h1, h2, h3, h4, h5 {
 
 .card-location-title {
   margin: 16px 0 20px !important;
-  font-size: 28px;
+  font-size: 26px;
   display: block;
   line-height: 1;
 }
 
+.card-location-place-type {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+}
+
+.card-location-place-type[content="Major City"] {
+  background-color: #2d7ff9 !important;
+  color: #fff !important;
+}
+
+.card-location-place-type[content="Big City"] {
+  background-color: #9cc7ff !important;
+}
+
+.card-location-place-type[content="Small City"] {
+  background-color: #9cc7ff !important;
+}
+
+.card-location-place-type[content="Mountain Town"] {
+  background-color: #d1f7c4 !important;
+}
+
+.card-location-place-type[content="Town"] {
+  background-color: #ede2fe !important;
+}
+
+.card-location-place-type[content="Day trip"] {
+  background-color: #fee2d5 !important;
+}
+
+.badge {
+  border-radius: 2px !important;
+}
+
 .image-cover {
   overflow: hidden;
-  height: 230px;
+  height: 218px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #000;
   border-radius: 3px;
+  position: relative;
 }
 
 @media only screen and (max-width: 600px) {
@@ -199,6 +271,7 @@ h1, h2, h3, h4, h5 {
 
 .image-cover-packing-list {
   height: 150px;
+  overflow: hidden;
 }
 
 .card-location-days {
@@ -264,6 +337,10 @@ h1, h2, h3, h4, h5 {
   left: 14px;
 }
 
+.card-footer {
+  background: #F7F9FA !important;
+}
+
 .loading {
   width: 100%;
   height: 100vh;
@@ -278,7 +355,6 @@ iframe {
   width: 100%;
   height: 90vh;
   border: none;
-  margin-top: -10vh;
 }
 
 .footer-img-container {
@@ -314,3 +390,101 @@ iframe {
 .app-header-half-container:nth-child(2) .app-header-half:nth-child(1) {
   display: none;
 } */
+
+
+/* JOURNAL */
+.journal {
+  background: url('./assets/map.svg');
+  background-repeat: repeat;
+  background-size: 300px;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0
+}
+
+.journal-post {
+  margin-bottom: 80px;
+}
+
+.journal-post .col-md-4 {
+  margin: 80px 0 10% -7%;
+}
+
+.journal-post-title {
+  font-size: 68px;
+  line-height: 1;
+  margin-bottom: 36px;
+}
+
+.journal-post-caption {
+  margin: 20px 0 0 16px;
+  color: #6D818F;
+  font-size: 14px;
+}
+
+.journal-post[content="Quote"] {
+  /* background: url('./assets/map.svg');
+  background-repeat: repeat-x;
+  background-size: 400px; */
+}
+
+.journal-post[content="Quote"] .col-md-4 {
+  width: 100%;
+  margin-left: 10%;
+  max-width: 100% !important;
+  flex: 100% !important;
+
+  width: 100%;
+  margin: 0;
+  position: relative;
+  padding: 100px;
+}
+
+.journal-post[content="Quote"] .col-md-8 {
+  display: none;
+}
+.journal-post[content="Quote"] .journal-post-title {
+  font-size: 42px;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-family: 'ApercuPro';
+}
+
+.journal-post[content="Quote"] .journal-post-title:before {
+  content: '"';
+  font-size: 128px;
+  color: #D8E0E6;
+  position: absolute;
+  left: -50px;
+  top: -40px;
+  z-index: -1;
+  font-family: 'ApercuPro';
+}
+
+.journal-post[content="Video"] {
+}
+
+ol {
+  padding: 0 !important;
+  list-style: none;
+  counter-reset: my-awesome-counter;
+}
+ol li {
+  counter-increment: my-awesome-counter;
+}
+ol li::before {
+  font-family: 'GTAmerica-Bold';
+  font-size: 18px;
+  color: #EEF2F5;
+  position: absolute;
+  content: counter(my-awesome-counter);
+  left: 0;
+  top: -18px;
+  text-align: right;
+  width: 33px;
+}

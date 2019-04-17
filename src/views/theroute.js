@@ -43,10 +43,10 @@ export default class Theroute extends Component {
     return (
       <div className="row mt-5">
         <div className="col">
-          <div className="card-deck">
+          <ol className="card-deck">
           {this.state.records.length > 0 ? (
             this.state.records.map((record, index) =>
-              <div className="col-md-4 d-flex align-items-stretch" key={index}>
+              <li className="col-md-4 d-flex align-items-stretch" key={index}>
                 <div class="card-location-country">
                   {record.fields['country lookup']}
                 </div>
@@ -61,6 +61,9 @@ export default class Theroute extends Component {
                         )}
                         actual={({ imageProps }) => <img {...imageProps} />}
                       />
+                      <span className="card-location-place-type badge badge-warning" content={record.fields["Place Type"]}>
+                        {record.fields['Place Type']}
+                      </span>
                     </div>
 
                     <div class="card-location-header">
@@ -70,20 +73,17 @@ export default class Theroute extends Component {
                           {record.fields['Days planned']} days
                         </small>
                       </h3>
-                      <span className="card-location-place-type badge badge-warning" content='{record.fields["Place Type"]}'>
-                        {record.fields['Place Type']}
-                      </span>
                     </div>
                     <p><span className="text-muted">{record.fields['Activities available']}</span></p>
                     <p>{record.fields['Description']}</p>
                   </div>
 
                   <div className="card-footer d-flex justify-content-between">
-                      <p><span className="text-muted">$</span>{record.fields['Daily Budget']} <span className="text-muted">p/day </span></p>
-                      <p><span className="text-muted">Total $</span>{record.fields['Total Cost']}</p>
+                      <div><span className="text-muted">$</span>{record.fields['Daily Budget']} <span className="text-muted">p/day </span></div>
+                      <div><span className="text-muted">Total $</span>{record.fields['Total Cost']}</div>
                   </div>
                 </div>
-              </div>
+              </li>
       )
       ) : (
         <div className="d-flex justify-content-center loading">
@@ -94,7 +94,7 @@ export default class Theroute extends Component {
           </div>
         </div>
       )}
-            </div>
+            </ol>
           </div>
         </div>
     );

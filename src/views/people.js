@@ -4,7 +4,7 @@ import { LazyImage } from "react-lazy-images";
 import placeholder from '../assets/placeholder@2x.png';
 const base = new Airtable({ apiKey: 'keyNxi8D57wMKr4Ge' }).base('appKL8Umn96W3lcVd');
 
-export default class Currentlocation extends Component {
+export default class People extends Component {
   state = {
   }
 
@@ -15,10 +15,8 @@ export default class Currentlocation extends Component {
     };
   }
   componentDidMount() {
-    base('Stops').select({
-      view: 'Grid view',
-      filterByFormula: '{current stop}="Current"',
-      maxRecords: 1
+    base('People').select({
+      view: 'Grid view'
     })
     .eachPage(
       (records, fetchNextPage) => {
@@ -32,36 +30,28 @@ export default class Currentlocation extends Component {
   }
 
   parseImg(element) {
-    if (element.imageURL instanceof Array) {
-      return element.imageURL[0].thumbnails.large.url;
+    if (element.Cover instanceof Array) {
+      return element.Cover[0].thumbnails.large.url;
     }
     return ''; // FIXME add default image
   }
   render() {
     return (
-      <div className="">
+      <div className="d-flex peoples">
           {this.state.records.length > 0 ? (
             this.state.records.map((record, index) =>
-              <div className="current-location app-header-half" key={index}>
-                <div className="app-header-half-image">
+                <div className="people-image">
                   <LazyImage
                     src={this.parseImg(record.fields)}
-                    className="card-img"
+                    className="people-img"
                     placeholder={({ imageProps, ref }) => (
                       <img ref={ref} src={placeholder} alt={imageProps.alt} width="100%"/>
                     )}
                     actual={({ imageProps }) => <img {...imageProps} />}
                   />
                 </div>
-                <div className="d-flex align-items-baseline">
-                  <div className="app-header-half-pretitle">
-                    Currently in..
-                  </div>
-                  <div className="app-header-half-title">
-                    {record.fields['Stop']}
-                  </div>
-                </div>
-              </div>
+
+
       )
       ) : (
         <div className="d-flex justify-content-center loading">

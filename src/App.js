@@ -8,8 +8,10 @@ import Theroute from './views/theroute';
 import Packinglist from './views/packinglist';
 import Calendar from './views/calendar';
 import Allstops from './views/allstops';
+import Journal from './views/journal';
 import Currentlocation from './views/currentlocation';
 import Nextlocation from './views/nextlocation';
+import People from './views/people';
 import {BrowserRouter, Route} from 'react-router-dom';
 
 class App extends Component {
@@ -18,8 +20,9 @@ class App extends Component {
       <div className="App">
         <div class="app-header">
           <Currentlocation />
-          <Nextlocation />
+          <People />
         </div>
+
         <div className="container-fluid mt-5">
           <div className="masthead d-flex justify-content-between">
             <a href="/">
@@ -37,6 +40,9 @@ class App extends Component {
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="/allstops">All Stops</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="/journal">Journal</a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="/calendar">Calendar</a>
@@ -61,6 +67,11 @@ class App extends Component {
                <Route exact={true} path='/allstops' render={() => (
                  <div className="App">
                    <Allstops />
+                 </div>
+               )}/>
+               <Route exact={true} path='/journal' render={() => (
+                 <div className="App">
+                   <Journal />
                  </div>
                )}/>
                <Route exact={true} path='/packinglist' render={() => (

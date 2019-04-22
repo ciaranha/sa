@@ -9,8 +9,6 @@ import Calendar from './views/calendar';
 import Allstops from './views/allstops';
 import Journal from './views/journal';
 import Currentlocation from './views/currentlocation';
-import Nextlocation from './views/nextlocation';
-import People from './views/people';
 import {BrowserRouter, Route} from 'react-router-dom';
 
 class App extends Component {

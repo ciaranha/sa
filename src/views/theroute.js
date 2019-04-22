@@ -87,7 +87,7 @@ export default class Theroute extends Component {
       )
       ) : (
         <div className="d-flex justify-content-center loading">
-          <div class="text-center">
+          <div className="text-center">
             <div className="spinner-border text-warning" role="status">
               <span className="sr-only">Loading...</span>
             </div>

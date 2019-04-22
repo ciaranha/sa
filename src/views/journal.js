@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import Airtable from 'airtable';
+import showdown from 'showdown';
+const markdownConverter = new showdown.Converter();
 const base = new Airtable({ apiKey: 'keyNxi8D57wMKr4Ge' }).base('appKL8Umn96W3lcVd');
+
 
 export default class Journal extends Component {
   state = {
   }
-
+  createHTML(markdown){
+    return(
+      markdownConverter.makeHtml(markdown)
+    )
+  }
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +20,9 @@ export default class Journal extends Component {
     };
   }
   componentDidMount() {
-    base('Journal').select({view: 'Grid view'})
+    base('Journal').select({
+      view: 'Grid view'
+    })
     .eachPage(
       (records, fetchNextPage) => {
         this.setState({
@@ -33,22 +42,23 @@ export default class Journal extends Component {
 
   render() {
     return (
-      <div className="row mt-5">
+      <div className="row mt-10">
         <div className="journal"/>
-        <div className="col-md-9">
-          <div className="row">
+        <div className="col-md-6 offset-md-3">
           {this.state.records.length > 0 ? (
             this.state.records.map((record, index) =>
-              <div className="row journal-post" content={record.fields['Post Type']} key={index}>
-                <div className="col-md-8">
+              <div className="journal-post" content={record.fields['Post Type']} key={index}>
+                <div className="journal-post-image">
                   <img className="card-img" src={this.parseImg(record.fields)}></img>
-                  <p class="journal-post-caption">{record.fields['Body']}</p>
+                  <p class="journal-post-caption">{record.fields['caption']}</p>
                 </div>
 
-                <div className="col-md-4">
-                  <h1 className="journal-post-title">
+                <div className="journal-post-title">
+                  <h1>
                     {record.fields['Title']}
                   </h1>
+                  <div className="journal-post-body" dangerouslySetInnerHTML={{__html: this.createHTML(record.fields['Body'])}} />
+
                 </div>
               </div>
       )
@@ -61,9 +71,8 @@ export default class Journal extends Component {
           </div>
         </div>
       )}
-            </div>
-          </div>
         </div>
+      </div>
     );
   }
 }

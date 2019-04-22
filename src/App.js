@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import showdown from 'showdown';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
-import './index.css';
+import './index.scss';
 import logo from './assets/logo.svg';
 import Theroute from './views/theroute';
 import Packinglist from './views/packinglist';
@@ -20,7 +19,31 @@ class App extends Component {
       <div className="App">
         <div class="app-header">
           <Currentlocation />
-          <People />
+
+          <nav className="navbar navbar-expand-lg navbar-light">
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <a className="nav-link" href="/">Planned Route</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/allstops">All Stops</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/journal">Journal</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/calendar">Calendar</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/packinglist">Packing List</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
         </div>
 
         <div className="container-fluid mt-5">
@@ -28,31 +51,6 @@ class App extends Component {
             <a href="/">
               <img src={logo} alt="Logo" />
             </a>
-
-            <nav className="navbar navbar-expand-lg navbar-light">
-              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav">
-                  <li className="nav-item">
-                    <a className="nav-link" href="/">Planned Route</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/allstops">All Stops</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/journal">Journal</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/calendar">Calendar</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/packinglist">Packing List</a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
           </div>
         </div>
 
@@ -60,29 +58,19 @@ class App extends Component {
           <BrowserRouter>
              <div>
                <Route exact={true} path='/' render={() => (
-                 <div className="App">
-                   <Theroute />
-                 </div>
+                 <Theroute />
                )}/>
                <Route exact={true} path='/allstops' render={() => (
-                 <div className="App">
-                   <Allstops />
-                 </div>
+                 <Allstops />
                )}/>
                <Route exact={true} path='/journal' render={() => (
-                 <div className="App">
-                   <Journal />
-                 </div>
+                 <Journal />
                )}/>
                <Route exact={true} path='/packinglist' render={() => (
-                 <div className="App">
-                   <Packinglist />
-                 </div>
+                 <Packinglist />
                )}/>
                <Route exact={true} path='/calendar' render={() => (
-                 <div className="App">
-                   <Calendar />
-                 </div>
+                 <Calendar />
                )}/>
              </div>
            </BrowserRouter>

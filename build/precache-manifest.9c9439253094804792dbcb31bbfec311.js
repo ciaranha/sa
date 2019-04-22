@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "b9fe597bbf4650832f53416848e762dc",
-    "url": "/static/media/GTAmerica-Bold.b9fe597b.svg"
+    "revision": "677edc2e5d4fc295973d200adcfe0fd3",
+    "url": "/static/media/GTAmerica-Bold.677edc2e.ttf"
   },
   {
     "revision": "7cd2532f8e8eb6ed8658",
@@ -24,12 +24,12 @@ self.__precacheManifest = [
     "url": "/static/media/placeholder@2x.19d5c7ef.png"
   },
   {
-    "revision": "e0b3eb8b8a076c0c9c7ac1a96174ae29",
-    "url": "/static/media/GTAmerica-Bold.e0b3eb8b.woff"
-  },
-  {
     "revision": "c76f6dd36a09f3578a5f9cc869ed169b",
     "url": "/static/media/GTAmerica-Bold.c76f6dd3.eot"
+  },
+  {
+    "revision": "e0b3eb8b8a076c0c9c7ac1a96174ae29",
+    "url": "/static/media/GTAmerica-Bold.e0b3eb8b.woff"
   },
   {
     "revision": "bdefcf010d3ebdbf039e0333fc693cbb",
@@ -42,6 +42,10 @@ self.__precacheManifest = [
   {
     "revision": "1b765c712fe52385c7b187ef8a301b8f",
     "url": "/static/media/ApercuPro.1b765c71.eot"
+  },
+  {
+    "revision": "b9fe597bbf4650832f53416848e762dc",
+    "url": "/static/media/GTAmerica-Bold.b9fe597b.svg"
   },
   {
     "revision": "a31afc54bd2b2f38e1a5b0cf95f44de5",
@@ -58,10 +62,6 @@ self.__precacheManifest = [
   {
     "revision": "8fc63c750a86331f88b4290a74edacda",
     "url": "/static/media/ApercuPro.8fc63c75.svg"
-  },
-  {
-    "revision": "677edc2e5d4fc295973d200adcfe0fd3",
-    "url": "/static/media/GTAmerica-Bold.677edc2e.ttf"
   },
   {
     "revision": "d4e7f6bc6c29631273c4e7b2b1c0484d",

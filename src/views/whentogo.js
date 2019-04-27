@@ -48,30 +48,32 @@ export default class Whentogo extends Component {
           <div className="card-deck">
           {this.state.records.length > 0 ? (
             this.state.records.map((record, index) =>
-              <div className="col-md-4 d-flex align-items-stretch" key={index}>
-                <div className="card-location-country card-whentogo">
-                  {record.fields['country lookup']}
-                </div>
+              <div className="col-md-4 d-flex align-items-stretch card-whentogo" key={index}>
                 <div className="card card-location">
                   <div className="card-body">
 
                     <div className="card-location-header">
                       <h3 className="card-title card-location-title">
                         {record.fields['Country']}
-                        <small className="text-muted card-location-days">
-                        <span className="text-muted">Best: </span>{record.fields['Best months']}
-                        </small>
                       </h3>
                     </div>
                     <p><div className="journal-post-body" dangerouslySetInnerHTML={{__html: this.createHTML(record.fields['Best time to go'])}} /></p>
                   </div>
 
                   <div className="card-footer d-flex justify-content-between align-items-center">
-                    <div><span className="text-muted">We'll be there </span></div>
+                    <div><span className="text-muted">Best months.. </span></div>
                     <div className="d-flex">
-                    <span className="badge badge-warning">
-                      {record.fields['Will be there']}
-                    </span>
+                      <span className="">
+                        {record.fields['Best months']}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="card-footer d-flex justify-content-between align-items-center">
+                    <div><span className="text-muted">We'll be there.. </span></div>
+                    <div className="d-flex">
+                      <span className="">
+                        {record.fields['Will be there']}
+                      </span>
                     </div>
                   </div>
                 </div>

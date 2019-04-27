@@ -33,12 +33,6 @@ class App extends Component {
                   <a className="nav-link" href="/allstops">All Stops</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/journal">Journal</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/cameraroll">Camera Roll</a>
-                </li>
-                <li className="nav-item">
                   <a className="nav-link" href="/calendar">Calendar</a>
                 </li>
                 <li className="nav-item">
@@ -46,6 +40,12 @@ class App extends Component {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="/packinglist">Packing List</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/journal">Journal</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/cameraroll">Camera Roll</a>
                 </li>
               </ul>
             </div>

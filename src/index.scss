@@ -314,6 +314,10 @@ a.nav-link {
   border-top: none !important;
 }
 
+.card-footer + .card-footer {
+  padding: 0 1.25rem 0.75rem;
+}
+
 .card-location-header {
   display: flex;
   justify-content: space-between;
@@ -510,6 +514,10 @@ iframe {
   margin: 0px 0 0px -20px;
   position: sticky;
   top: 0;
+}
+
+.card-whentogo p strong {
+  font-family: 'GTAmerica-Bold' !important;
 }
 
 ol {

@@ -39,14 +39,14 @@ export default class Nextlocation extends Component {
   }
   render() {
     return (
-      <div class="app-header-half-container">
+      <div className="app-header-half-container">
           {this.state.records.length > 0 ? (
             this.state.records.map((record, index) =>
-              <div class="current-location app-header-half" key={index}>
+              <div className="current-location app-header-half" key={index}>
                 <div className="app-header-half-image">
                   <LazyImage
                     src={this.parseImg(record.fields)}
-                    class="card-img"
+                    className="card-img"
                     placeholder={({ imageProps, ref }) => (
                       <img ref={ref} src={placeholder} alt={imageProps.alt} width="100%"/>
                     )}
@@ -57,7 +57,7 @@ export default class Nextlocation extends Component {
                   <div className="app-header-half-pretitle">
                     Next Stop
                   </div>
-                  <div class="d-flex">
+                  <div className="d-flex">
                     <div className="app-header-half-title">
                       {record.fields['Stop']}
                     </div>
@@ -70,7 +70,7 @@ export default class Nextlocation extends Component {
       )
       ) : (
         <div className="d-flex justify-content-center loading">
-          <div class="text-center">
+          <div className="text-center">
             <div className="spinner-border text-warning" role="status">
               <span className="sr-only">Loading...</span>
             </div>

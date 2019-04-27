@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import Airtable from 'airtable';
 import showdown from 'showdown';
 const markdownConverter = new showdown.Converter();
-const base = new Airtable({ apiKey: 'keyNxi8D57wMKr4Ge' }).base('appKL8Umn96W3lcVd');
+const base = new Airtable({ apiKey: 'keyNxi8D57wMKr4Ge' }).base('appu61KasWq0Muo66');
 
 
-export default class Journal extends Component {
+export default class Cameraroll extends Component {
   state = {
   }
   createHTML(markdown){
@@ -20,7 +20,7 @@ export default class Journal extends Component {
     };
   }
   componentDidMount() {
-    base('Journal').select({
+    base('Camera Roll').select({
       view: 'Grid view'
     })
     .eachPage(
@@ -34,11 +34,23 @@ export default class Journal extends Component {
     );
   }
   parseImg(element) {
-    if (element.cover instanceof Array) {
-      return element.cover[0].thumbnails.large.url;
+    if (element.images instanceof Array) {
+      return element.images[0].thumbnails.large.url;
     }
     return '';
   }
+  // parseImg(element) {
+  //   if (element.images instanceof Array) {
+  //     var x = element.images;
+  //     var txt = "";
+  //     var i;
+  //     for (i = 0; i < x.length; i++) {
+  //       txt = txt + x[i].thumbnails.large.url + "<br>";
+  //     }
+  //     return txt;
+  //   }
+  //   return '';
+  // }
 
   render() {
     return (
@@ -46,18 +58,11 @@ export default class Journal extends Component {
         <div className="col-md-6 offset-md-3">
           {this.state.records.length > 0 ? (
             this.state.records.map((record, index) =>
-              <div className="journal-post" content={record.fields['Post Type']} key={index}>
-                <div className="journal-post-image">
+              <div className="cameraroll-post" content={record.fields['Place']} key={index}>
+                <div className="cameraroll-post-place">{record.fields['Place']}</div>
+                <div className="cameraroll-post-image">
                   <img className="card-img" src={this.parseImg(record.fields)}></img>
-                  <p className="journal-post-caption">{record.fields['caption']}</p>
-                </div>
-
-                <div className="journal-post-title">
-                  <h1>
-                    {record.fields['Title']}
-                  </h1>
-                  <div className="journal-post-body" dangerouslySetInnerHTML={{__html: this.createHTML(record.fields['Body'])}} />
-
+                  <p className="journal-post-caption">{record.fields['Notes']}</p>
                 </div>
               </div>
       )

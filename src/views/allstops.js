@@ -43,7 +43,7 @@ export default class Allstops extends Component {
           {this.state.records.length > 0 ? (
             this.state.records.map((record, index) =>
               <div className="col-md-4 d-flex align-items-stretch" key={index}>
-                <div class="card-location-country">
+                <div className="card-location-country">
                   {record.fields['country lookup']}
                 </div>
                 <div className="card card-location">
@@ -51,7 +51,7 @@ export default class Allstops extends Component {
                     <div className="image-cover">
                       <LazyImage
                         src={this.parseImg(record.fields)}
-                        class="card-img"
+                        className="card-img"
                         placeholder={({ imageProps, ref }) => (
                           <img ref={ref} src={placeholder} alt={imageProps.alt} width="100%"/>
                         )}
@@ -62,7 +62,7 @@ export default class Allstops extends Component {
                       </span>
                     </div>
 
-                    <div class="card-location-header">
+                    <div className="card-location-header">
                       <h3 className="card-title card-location-title">
                         {record.fields['Stop']}
                         <small className="text-muted card-location-days">
@@ -76,7 +76,7 @@ export default class Allstops extends Component {
 
                   <div className="card-footer d-flex justify-content-between">
                     <div><span className="text-muted">In Route: </span>{record.fields['Planned Stop']}</div>
-                    <div class="d-flex">
+                    <div className="d-flex">
                       <span className="text-muted">$</span>{record.fields['Daily Budget']} <span className="text-muted">p/day </span>
                       <span className="text-muted">, Total $</span>{record.fields['Total Cost']}
                     </div>
@@ -86,7 +86,7 @@ export default class Allstops extends Component {
       )
       ) : (
         <div className="d-flex justify-content-center loading">
-          <div class="text-center">
+          <div className="text-center">
             <div className="spinner-border text-warning" role="status">
               <span className="sr-only">Loading...</span>
             </div>

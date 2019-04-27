@@ -1,3 +1,6 @@
+$screen-sm: 480px;
+$screen-md: 768px;
+
 @font-face {
   font-family: 'GTAmerica-Bold';
   src:
@@ -50,12 +53,14 @@ h1, h2, h3, h4, h5 {
   right: 0;
 }
 
-.navbar-collapse {
-  position: relative;
-  right: 6px;
-  width: 210px;
-  top: 133px;
-  text-align: right;
+@media (max-width: $screen-md) {
+  .navbar-collapse {
+    position: relative;
+    right: 6px;
+    width: 210px;
+    top: 133px;
+    text-align: right;
+  }
 }
 
 a.nav-link {
@@ -174,7 +179,7 @@ a.nav-link {
 }
 
 .masthead {
-  margin: 100px 0;
+  margin: 130px 0;
 }
 
 .masthead img {
@@ -499,6 +504,14 @@ iframe {
   }
 }
 
+.cameraroll-post-place {
+  font-family: 'GTAmerica-Bold';
+  display: inline-block;
+  margin: 0px 0 0px -20px;
+  position: sticky;
+  top: 0;
+}
+
 ol {
   padding: 0 !important;
   list-style: none;
@@ -523,4 +536,31 @@ ol {
 
 .mt-10 {
   margin-top: 140px;
+}
+
+.outer {
+  position: relative;
+}
+
+.route-map-container {
+  position: absolute;
+  right: 10px;
+  top: -280px;
+
+  @media (max-width: $screen-sm) {
+    z-index: -1;
+    opacity: 0.7;
+  }
+}
+
+.route {
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation: dash 20s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
 }

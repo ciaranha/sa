@@ -56,6 +56,9 @@ export default class Journal extends Component {
                   <h1>
                     {record.fields['Title']}
                   </h1>
+                  <p className="journal-post-date text-muted">
+                    {record.fields['date']}
+                  </p>
                   <div className="journal-post-body" dangerouslySetInnerHTML={{__html: this.createHTML(record.fields['Body'])}} />
 
                 </div>

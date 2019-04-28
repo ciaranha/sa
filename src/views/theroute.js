@@ -8,7 +8,6 @@ const base = new Airtable({ apiKey: 'keyNxi8D57wMKr4Ge' }).base('appKL8Umn96W3lc
 export default class Theroute extends Component {
   state = {
   }
-
   constructor(props) {
     super(props);
     this.state = {
@@ -33,12 +32,11 @@ export default class Theroute extends Component {
       }
     );
   }
-
   parseImg(element) {
     if (element.imageURL instanceof Array) {
       return element.imageURL[0].thumbnails.large.url;
     }
-    return ''; // FIXME add default image
+    return ''; 
   }
   render() {
     return (
@@ -79,7 +77,9 @@ export default class Theroute extends Component {
                           </small>
                         </h3>
                       </div>
-                      <p><span className="text-muted">{record.fields['Activities available']}</span></p>
+                      <p>
+                        <div className="text-muted" dangerouslySetInnerHTML={{__html: record.fields['Activities available']}}/>
+                      </p>
                       <p>{record.fields['Description']}</p>
                     </div>
 

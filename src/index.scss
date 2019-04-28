@@ -25,6 +25,11 @@ $screen-md: 768px;
   font-style: normal;
 }
 
+// COLORS
+$green: #49b882;
+$red: #EC4C47;
+$orange: #FAD112;
+
 body {
   margin: 0;
   padding: 0;
@@ -267,6 +272,23 @@ a.nav-link {
 
 .card-location-place-type[content="Day trip"] {
   background-color: #fee2d5 !important;
+}
+
+.card-footer {
+  .badge[content="Yes"] {
+    color: #fff;
+    background-color: $green;
+  }
+
+  .badge[content="No"] {
+    color: #fff;
+    background-color: $red;
+  }
+
+  .badge[content="Maybe"] {
+    color: #fff;
+    background-color: $orange;
+  }
 }
 
 .badge {

@@ -7,7 +7,6 @@ const base = new Airtable({ apiKey: 'keyNxi8D57wMKr4Ge' }).base('appKL8Umn96W3lc
 export default class Allstops extends Component {
   state = {
   }
-
   constructor(props) {
     super(props);
     this.state = {
@@ -28,7 +27,18 @@ export default class Allstops extends Component {
       }
     );
   }
-
+  Activities(props) {
+    const activities = props.activities;
+    if (activities) { // catch objects with no activities
+      const listItems = activities.map((activity) =>
+        <li>{activity}</li>
+      );
+      return (
+        <ul>{listItems}</ul>
+      );
+    }
+    return ''; // probably not needed
+  }
   parseImg(element) {
     if (element.imageURL instanceof Array) {
       return element.imageURL[0].thumbnails.large.url;
@@ -57,7 +67,7 @@ export default class Allstops extends Component {
                         )}
                         actual={({ imageProps }) => <img {...imageProps} />}
                       />
-                      <span className="card-location-place-type badge badge-warning" content='{record.fields["Place Type"]}'>
+                      <span className="card-location-place-type badge badge-warning" content={record.fields["Place Type"]}>
                         {record.fields['Place Type']}
                       </span>
                     </div>
@@ -70,12 +80,20 @@ export default class Allstops extends Component {
                         </small>
                       </h3>
                     </div>
-                    <p><span className="text-muted">{record.fields['Activities available']}</span></p>
+                    <p>
+                      <span className="text-muted">
+                        <div dangerouslySetInnerHTML={{__html: record.fields['Activities available']}}/>
+                      </span>
+                    </p>
+
                     <p>{record.fields['Description']}</p>
                   </div>
 
                   <div className="card-footer d-flex justify-content-between">
-                    <div><span className="text-muted">In Route: </span>{record.fields['Planned Stop']}</div>
+                    <div>
+                      <span className="text-muted">In Route? </span>
+                      <span className="badge badge-success" content={record.fields["Planned Stop"]}>{record.fields['Planned Stop']}</span>
+                    </div>
                     <div className="d-flex">
                       <span className="text-muted">$</span>{record.fields['Daily Budget']} <span className="text-muted">p/day </span>
                       <span className="text-muted">, Total $</span>{record.fields['Total Cost']}

@@ -41,6 +41,8 @@ export default class Whentogo extends Component {
     }
     return ''; // FIXME add default image
   }
+
+
   render() {
     return (
       <div className="row mt-5">
@@ -62,19 +64,11 @@ export default class Whentogo extends Component {
 
                   <div className="card-footer d-flex justify-content-between align-items-center">
                     <div><span className="text-muted">Best months.. </span></div>
-                    <div className="d-flex">
-                      <span className="">
-                        {record.fields['Best months']}
-                      </span>
-                    </div>
+                    <div className="d-flex" dangerouslySetInnerHTML={{__html: record.fields['Best months']}}/>
                   </div>
                   <div className="card-footer d-flex justify-content-between align-items-center">
                     <div><span className="text-muted">We'll be there.. </span></div>
-                    <div className="d-flex">
-                      <span className="">
-                        {record.fields['Will be there']}
-                      </span>
-                    </div>
+                    <div className="d-flex" dangerouslySetInnerHTML={{__html: record.fields['Will be there']}}/>
                   </div>
                 </div>
               </div>

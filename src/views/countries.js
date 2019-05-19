@@ -6,7 +6,7 @@ import placeholder from '../assets/placeholder@2x.png';
 const markdownConverter = new showdown.Converter();
 const base = new Airtable({ apiKey: 'keyNxi8D57wMKr4Ge' }).base('appKL8Umn96W3lcVd');
 
-export default class Whentogo extends Component {
+export default class Countries extends Component {
   state = {
   }
   createHTML(markdown){
@@ -42,7 +42,6 @@ export default class Whentogo extends Component {
     return ''; // FIXME add default image
   }
 
-
   render() {
     return (
       <div className="row mt-5">
@@ -50,8 +49,8 @@ export default class Whentogo extends Component {
           <div className="card-deck">
           {this.state.records.length > 0 ? (
             this.state.records.map((record, index) =>
-              <div className="col-md-4 d-flex align-items-stretch card-whentogo" key={index}>
-                <div className="card card-location">
+              <div className="col-md-6 d-flex align-items-stretch card-whentogo" key={index}>
+                <div className="card card-location card-location-country">
                   <div className="card-body">
 
                     <div className="card-location-header">
@@ -59,6 +58,7 @@ export default class Whentogo extends Component {
                         {record.fields['Country']}
                       </h3>
                     </div>
+                    <p><div className="journal-post-body" dangerouslySetInnerHTML={{__html: this.createHTML(record.fields['Links'])}} /></p>
                     <p><div className="journal-post-body" dangerouslySetInnerHTML={{__html: this.createHTML(record.fields['Best time to go'])}} /></p>
                   </div>
 

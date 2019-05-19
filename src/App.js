@@ -11,7 +11,7 @@ import Routemap from './views/routemap';
 import Journal from './views/journal';
 import Cameraroll from './views/cameraroll';
 import Currentlocation from './views/currentlocation';
-import Whentogo from './views/whentogo';
+import Countries from './views/countries';
 import {BrowserRouter, Route} from 'react-router-dom';
 
 class App extends Component {
@@ -36,7 +36,7 @@ class App extends Component {
                   <a className="nav-link" href="/calendar">Calendar</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/whentogo">When to go</a>
+                  <a className="nav-link" href="/countries">Countries</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="/packinglist">Packing List</a>
@@ -84,8 +84,8 @@ class App extends Component {
                <Route exact={true} path='/calendar' render={() => (
                  <Calendar />
                )}/>
-               <Route exact={true} path='/whentogo' render={() => (
-                 <Whentogo />
+               <Route exact={true} path='/countries' render={() => (
+                 <Countries />
                )}/>
              </div>
            </BrowserRouter>

@@ -36,7 +36,7 @@ export default class Theroute extends Component {
     if (element.imageURL instanceof Array) {
       return element.imageURL[0].thumbnails.large.url;
     }
-    return ''; 
+    return '';
   }
   render() {
     return (
@@ -50,7 +50,7 @@ export default class Theroute extends Component {
             {this.state.records.length > 0 ? (
               this.state.records.map((record, index) =>
                 <li className="col-md-4 d-flex align-items-stretch" key={index}>
-                  <div className="card-location-country">
+                  <div className="card-location-precountry">
                     {record.fields['country lookup']}
                   </div>
                   <div className="card card-location">

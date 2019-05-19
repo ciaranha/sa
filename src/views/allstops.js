@@ -53,7 +53,7 @@ export default class Allstops extends Component {
           {this.state.records.length > 0 ? (
             this.state.records.map((record, index) =>
               <div className="col-md-4 d-flex align-items-stretch" key={index}>
-                <div className="card-location-country">
+                <div className="card-location-precountry">
                   {record.fields['country lookup']}
                 </div>
                 <div className="card card-location">
